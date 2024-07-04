@@ -91,12 +91,30 @@ describe StringCalculator do
         end
       end
     end
+
+    context "case: numbers bigger than 1000 should be ignored in string" do
+      context "given '1,2,4,5,6,1000'" do
+        it "returns 25" do
+          expect(subject.add("1,2,4,5,6,1000")).to eq(1018)
+        end
+      end
+      context "given '1,2,4,5,6,1001'" do
+        it "returns 25" do
+          expect(subject.add("1,2,4,5,6,1001")).to eq(18)
+        end
+      end
+      context "given '1,2,4000'" do
+        it "returns 3" do
+          expect(subject.add("1,2,4000")).to eq(3)
+        end
+      end
+    end
   end
 
   describe ".get_called_count" do
     context "case: get how many times add() was invoked" do
       it "returns 15 (based on test no of cases)" do
-        expect(subject.get_called_count).to eq(15)
+        expect(subject.get_called_count).to eq(18)
       end
     end
   end
