@@ -9,7 +9,7 @@ module StringCalculator
     numbers = input.scan(/-?\d*/m).map { |num| num.to_i }
     negatives = numbers.select(&:negative?)
     raise "negatives not allowed [#{negatives.join(',')}]" unless negatives.empty?
-    numbers.sum
+    numbers.select { |num| num <= 1000 }.sum
   end
 
   def self.get_called_count
