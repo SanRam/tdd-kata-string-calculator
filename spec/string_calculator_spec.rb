@@ -33,5 +33,22 @@ describe StringCalculator do
         end
       end
     end
+
+    context "case: many numbers in string" do
+      context "given '1,2,4,5,6,7'" do
+        it "returns 25" do
+          expect(subject.add("1,2,4,5,6,7")).to eq(25)
+        end
+      end
+      context "given '20,19,21,33,4,45,0'" do
+        it "returns 142" do
+          expect(subject.add("20,19,21,33,4,45,0")).to eq(142)
+        end
+      end
+    end
+
+
+
+
   end
 end
