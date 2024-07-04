@@ -87,6 +87,14 @@ describe StringCalculator do
       end
     end
 
+    context "case: allow multiple delimiters like this" do
+      context "given '//[*][%]\n1*2%3'" do
+        it "returns 6" do
+          expect(subject.add("//[*][%]\n1*2%3")).to eq(6)
+        end
+      end
+    end
+
     context "case: negative number in string" do
       context "given '1,2,-4'" do
         it "raise an exception" do
