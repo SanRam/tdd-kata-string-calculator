@@ -47,7 +47,23 @@ describe StringCalculator do
       end
     end
 
-
+    context "case: delimeter along with newline '\n' along with ',' in string" do
+      context "given '1\n2,3'" do
+        it "returns 6" do
+          expect(subject.add("1\n2,3")).to eq(6)
+        end
+      end
+      context "given '1,2,4,5,6\n7'" do
+        it "returns 25" do
+          expect(subject.add("1,2,4,5,6\n7")).to eq(25)
+        end
+      end
+      context "given '20,19\n21,33,4,45,0'" do
+        it "returns 142" do
+          expect(subject.add("20,19\n21,33,4,45,0")).to eq(142)
+        end
+      end
+    end
 
 
   end
