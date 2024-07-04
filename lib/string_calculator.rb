@@ -1,6 +1,6 @@
 module StringCalculator
   def self.add(input)
-    0
+    input.to_i
   end
 end
 
