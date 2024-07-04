@@ -92,4 +92,12 @@ describe StringCalculator do
       end
     end
   end
+
+  describe ".get_called_count" do
+    context "case: get how many times add() was invoked" do
+      it "returns 15 (based on test no of cases)" do
+        expect(subject.get_called_count).to eq(15)
+      end
+    end
+  end
 end
