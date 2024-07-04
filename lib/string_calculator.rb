@@ -3,7 +3,8 @@ module StringCalculator
     return 0 if input.nil? || input.empty?
     # this should handle many numbers in a string with various delimiter cases
     numbers = input.scan(/-?\d*/m).map { |num| num.to_i }
-    raise "negatives not allowed" if numbers.find(&:negative?)
+    negatives = numbers.select(&:negative?)
+    raise "negatives not allowed [#{negatives.join(',')}]" unless negatives.empty?
     numbers.sum
 
   end
