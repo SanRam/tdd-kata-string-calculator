@@ -65,7 +65,7 @@ describe StringCalculator do
       end
     end
 
-    context "case: delimiter with various characters '//;\n;- etc' in string" do
+    context "case: delimiter with various characters '//;\n; etc' in string" do
       context "given '//;\n1;2'" do
         it "returns 3" do
           expect(subject.add("//;\n1;2")).to eq(3)
@@ -75,6 +75,14 @@ describe StringCalculator do
       context "given '//;\n1;2.4'" do
         it "returns 7" do
           expect(subject.add("//;\n1;2.4")).to eq(7)
+        end
+      end
+    end
+
+    context "case: delimiters can be of any length with the following format" do
+      context "given '//[***]\n1***2***3'" do
+        it "returns 6" do
+          expect(subject.add("//[***]\n1***2***3")).to eq(6)
         end
       end
     end
