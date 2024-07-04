@@ -4,7 +4,7 @@ module StringCalculator
       0
     else
       # this should handle many numbers in a string with delimiter
-      numbers = input.split(",").map { |num| num.to_i }
+      numbers = input.scan(/\d*/).map { |num| num.to_i }
       numbers.sum
     end
   end
