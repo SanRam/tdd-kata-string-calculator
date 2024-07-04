@@ -82,7 +82,12 @@ describe StringCalculator do
     context "case: negative number in string" do
       context "given '1,2,-4'" do
         it "raise an exception" do
-          expect{subject.add("1,2,-4")}.to raise_error("negatives not allowed")
+          expect{subject.add("1,2,-4")}.to raise_error("negatives not allowed [-4]")
+        end
+      end
+      context "given '1,2,-4, -15'" do
+        it "raise an exception" do
+          expect{subject.add("1,2,-4, -15")}.to raise_error("negatives not allowed [-4,-15]")
         end
       end
     end
