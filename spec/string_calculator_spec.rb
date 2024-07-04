@@ -73,7 +73,7 @@ describe StringCalculator do
       end
 
       context "given '//;\n1;2.4'" do
-        it "returns 3" do
+        it "returns 7" do
           expect(subject.add("//;\n1;2.4")).to eq(7)
         end
       end
