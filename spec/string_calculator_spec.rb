@@ -16,5 +16,6 @@ describe StringCalculator do
         expect(subject.add("6")).to eq(6)
       end
     end
+    
   end
 end
