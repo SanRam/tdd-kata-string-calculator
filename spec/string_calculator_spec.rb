@@ -7,5 +7,14 @@ describe StringCalculator do
         expect(subject.add("")).to eq(0)
       end
     end
+
+    context "I: one number in string" do
+      it "O: returns one number" do
+        expect(subject.add("1")).to eq(1)
+      end
+      it "O: returns one number" do
+        expect(subject.add("6")).to eq(6)
+      end
+    end
   end
 end
